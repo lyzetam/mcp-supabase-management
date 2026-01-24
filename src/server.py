@@ -658,9 +658,15 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[TextContent]:
         return [TextContent(type="text", text=f"Error: {str(e)}")]
 
 
+async def run_server():
+    """Run the MCP server with stdio transport."""
+    async with stdio_server() as (read_stream, write_stream):
+        await app.run(read_stream, write_stream, app.create_initialization_options())
+
+
 def main():
     """Run the MCP server."""
-    asyncio.run(stdio_server(app))
+    asyncio.run(run_server())
 
 
 if __name__ == "__main__":
