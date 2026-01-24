@@ -96,9 +96,24 @@ execute_sql(
 
 ## Project References
 
-| Project | Reference ID |
-|---------|--------------|
-| Quantum | `abcdefghijklmnopqrst` |
-| Phoenix | `zzdwykxtcxcahxtzojtw` |
-| Zeroed | `tsrqponmlkjihgfedcba` |
-| Bible | `rehpmoxczibgkwcawelo` |
+| Project | Reference ID | HTTP MCP |
+|---------|--------------|----------|
+| Quantum | `abcdefghijklmnopqrst` | `supabase-quantum` |
+| Phoenix | `zzdwykxtcxcahxtzojtw` | `supabase-phoenix` |
+| Zeroed | `tsrqponmlkjihgfedcba` | `supabase-zeroed` |
+| Bible | `rehpmoxczibgkwcawelo` | `supabase-bible` |
+
+## MCP Architecture
+
+Two types of Supabase MCPs work together:
+
+1. **Management MCP** (`supabase-management`) - Uses Management API for cross-project operations:
+   - Create/delete projects
+   - Execute SQL on any project
+   - Manage secrets, branches, edge functions
+   - List all organizations and projects
+
+2. **Project HTTP MCPs** (`supabase-*`) - Official Supabase MCPs for project-specific features:
+   - `search_docs` - Search project documentation
+   - `list_tables`, `execute_sql` - Database operations
+   - Project-scoped tooling
