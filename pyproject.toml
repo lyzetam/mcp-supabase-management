@@ -1,0 +1,22 @@
+[project]
+name = "mcp-supabase-management"
+version = "0.1.0"
+description = "MCP server for Supabase Management API - create projects, manage API keys, run migrations"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.scripts]
+mcp-supabase-management = "src.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
