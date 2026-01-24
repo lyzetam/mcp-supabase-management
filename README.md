@@ -119,6 +119,7 @@ deploy_function(
 | Phoenix | `zzdwykxtcxcahxtzojtw` | `supabase-phoenix` |
 | Zeroed | `tsrqponmlkjihgfedcba` | `supabase-zeroed` |
 | Bible | `rehpmoxczibgkwcawelo` | `supabase-bible` |
+| FieldReady | `xgxvjmrmpponjpksmand` | `supabase-fieldready` |
 
 ## Architecture
 
