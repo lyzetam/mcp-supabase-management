@@ -101,3 +101,4 @@ execute_sql(
 | Quantum | `abcdefghijklmnopqrst` |
 | Phoenix | `zzdwykxtcxcahxtzojtw` |
 | Zeroed | `tsrqponmlkjihgfedcba` |
+| Bible | `rehpmoxczibgkwcawelo` |
