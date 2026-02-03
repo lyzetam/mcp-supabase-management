@@ -7,6 +7,8 @@ from typing import Any
 
 import httpx
 
+from mcp_supabase_management.config import get_settings
+
 MANAGEMENT_API = "https://api.supabase.com/v1"
 
 
@@ -16,14 +18,17 @@ class SupabaseManagementClient:
     Provides both sync (for LangChain tools / operations) and async
     (for MCP server) methods via httpx.
 
-    Reads credentials from environment variables by default:
-    - SUPABASE_ACCESS_TOKEN (required)
+    Reads configuration from environment variables (SUPABASE_* prefix),
+    .env file, or explicit constructor parameters.
     """
 
     def __init__(self, access_token: str | None = None) -> None:
-        self.access_token = (
-            access_token or os.environ.get("SUPABASE_ACCESS_TOKEN", "")
-        ).strip()
+        try:
+            settings = get_settings()
+            settings_token = settings.access_token
+        except Exception:
+            settings_token = ""
+        self.access_token = (access_token or settings_token).strip()
         if not self.access_token:
             raise ValueError("SUPABASE_ACCESS_TOKEN environment variable not set")
 
