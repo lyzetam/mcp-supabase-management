@@ -2,9 +2,15 @@
 name = "mcp-supabase-management"
 version = "0.2.0"
 description = "Supabase Management API as Python library, LangChain tools, and MCP server"
+authors = [{name = "Landry Zetam"}]
+license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["httpx>=0.27.0", "pydantic-settings>=2.0"]
+
+[project.urls]
+Homepage = "https://github.com/lyzetam/mcp-supabase-management"
+Repository = "https://github.com/lyzetam/mcp-supabase-management"
 
 [project.optional-dependencies]
 mcp = ["mcp>=1.0.0"]

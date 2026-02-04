@@ -40,3 +40,6 @@ ENV/
 
 # Lock file
 uv.lock
+
+# Claude Code
+CLAUDE.md
